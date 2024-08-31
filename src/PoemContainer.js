@@ -227,9 +227,12 @@ const poemData = [
 
 function PoemContainer() {
   const [activeVerse, setActiveVerse] = useState(null);
-  const activeAudios = useRef([]); // Asegúrate de declarar `activeAudios` aquí
+  const [isAnimating, setIsAnimating] = useState(false);
+  const activeAudios = useRef([]); //  declarar `activeAudios` aquí
 
   const handleVerseClick = (verseIndex) => {
+   
+   
     setActiveVerse(verseIndex);
 
     // Crear un nuevo elemento de audio y reproducirlo

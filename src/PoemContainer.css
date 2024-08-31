@@ -18,7 +18,6 @@
   color: rgba(255, 255, 255, 0.5); /* Color blanco con opacidad */
   margin: 0;
   padding: 5px;
-  
   position: absolute;
   top: 0;
   left: 0;
@@ -27,6 +26,7 @@
     calc(100vw * var(--random-x)),
     calc(100vh * var(--random-y))
   );
+  
   
 }
 
@@ -39,6 +39,7 @@
 .poem-container.poem-active .verse {
   line-height: 200; /* Aumenta el interlineado del verso seleccionado */
   color: rgba(255, 255, 255, 0.7); /* Cambia el color del poema de fondo */
+
 }
 
 
@@ -72,3 +73,7 @@
   background: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
   border-radius: 10px;
 }
+
+
+
+
