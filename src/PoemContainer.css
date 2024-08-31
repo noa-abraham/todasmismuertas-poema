@@ -8,6 +8,11 @@
   background: #000; /* Fondo negro para que los versos blancos resalten */
 }
 
+.poem-container.poem-active {
+  /* Cambios en el poema de fondo cuando hay un verso activo */
+  font-size: 12px; /* Aumenta el tamaño de fuente */
+  line-height: 2; /* Aumenta el interlineado */
+}
 .verse {
   font-size: 18px; /* Tamaño de fuente más grande */
   color: rgba(255, 255, 255, 0.5); /* Color blanco con opacidad */
@@ -29,6 +34,11 @@
   color: rgba(255, 255, 255, 1); /* Color blanco sin opacidad */
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* Efecto estroboscópico */
   cursor: pointer; /* Cambia el puntero a una mano */
+}
+
+.poem-container.poem-active .verse {
+  line-height: 200; /* Aumenta el interlineado del verso seleccionado */
+  color: rgba(255, 255, 255, 0.7); /* Cambia el color del poema de fondo */
 }
 
 
