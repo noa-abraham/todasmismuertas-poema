@@ -231,9 +231,13 @@ function PoemContainer() {
   const [activeVerse, setActiveVerse] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const activeAudios = useRef([]); //  declarar `activeAudios` aquí
+  const [showModal, setShowModal] = useState(false); // Estado para controlar el modal
 
 
   useEffect(() => {
+     // Mostrar el modal al cargar la página
+     setShowModal(true);
+    
     const highlightRandomVerses = (numberOfHighlights) => {
       const verses = document.querySelectorAll('.verse');
       const selectedVerses = [];
@@ -252,6 +256,7 @@ function PoemContainer() {
   }, []);
 
 
+  
   const handleVerseClick = (verseIndex) => {
    
    
@@ -276,35 +281,54 @@ function PoemContainer() {
     handleOverlayClick(); // Cierra el overlay al hacer clic en la imagen
   };
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   // Repetir el poema para llenar la pantalla
   const repeatedVerses = Array(10).fill(poemData).flat();
 
+
+
   return (
-    <div className={`poem-container ${activeVerse !== null ? 'poem-active' : ''}`}>
-      {repeatedVerses.map((verse, index) => {
-        const randomX = Math.random();
-        const randomY = Math.random();
-        return (
-          <Verse
-            key={index}
-            text={verse.text}
-            onClick={() => handleVerseClick(index % poemData.length)}
-            className="verse" // Asegúrate de que esta clase esté presente
-            style={{
-              transform: `translate(${randomX * 100}vw, ${randomY * 100}vh)`
-            }}
-          />
-        );
-      })}
-      {activeVerse !== null && (
-        <div className="overlay" onClick={handleOverlayClick}>
-          <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
-          <p className="overlay-text">{poemData[activeVerse].text}</p>  
-         
+    <>
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <p>
+              Un algoritmo puede ser también un laberinto.<br/>
+              
+              A la memoria de todas mis muertas, un clic tras otro, sin parar, puede que te haga escuchar un poema.
+            </p>
+            <button onClick={handleCloseModal}>Cerrar</button>
           </div>
         </div>
       )}
-    </div>
+      <div className={`poem-container ${activeVerse !== null ? 'poem-active' : ''}`}>
+        {repeatedVerses.map((verse, index) => {
+          const randomX = Math.random();
+          const randomY = Math.random();
+          return (
+            <Verse
+              key={index}
+              text={verse.text}
+              onClick={() => handleVerseClick(index % poemData.length)}
+              className="verse" // Asegúrate de que esta clase esté presente
+              style={{
+                transform: `translate(${randomX * 100}vw, ${randomY * 100}vh)`
+              }}
+            />
+          );
+        })}
+        {activeVerse !== null && (
+          <div className="overlay" onClick={handleOverlayClick}>
+            <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
+              <p className="overlay-text">{poemData[activeVerse].text}</p>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 

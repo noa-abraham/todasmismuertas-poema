@@ -1,6 +1,6 @@
 # TODAS MIS MUERTAS
 
-Este proyecto fue hecho con React.
+Este proyecto fue hecho en React.
 La programación, el poema y los audios fueron hechos por mí. 
 
 ## Autora
@@ -9,10 +9,10 @@ Noelia Abraham.
 
 Lic. en Letras (UBA), investigo diferentes soportes para la poesía, la voz y las palabras, en el cruce de nuevas formas de ver/esuchar poesía.  Investigo en grupo,  en el Instituto de Literatura Hispanoamerciana, la interacción de la voz con la escucha en la escena de Slam de Poesía en el AMBA. Además, soy  programadora y editora. 
 
-Contacto: noeliasabraham@gmail.com
+contacto: noeliasabraham@gmail.com
 
 
-## Sobre esta pieza
+## Sobre Todas mis muertas
 
 Las piezas artísticas digitales muchas veces desafían, critican, subrayan o exploran los modos de retención y percepción impuestos por los dispositivos digitales hegemónicos en los que se realizan. 
 
