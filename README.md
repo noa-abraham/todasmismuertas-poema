@@ -1,20 +1,70 @@
-# TODAS MIS MUERTAS por NOELIA ABRAHAM
+# TODAS MIS MUERTAS
 
-Este proyecto fue creado con React, codificado por mí, al igual que el poema y los audios, que fueron grabados con mi voz.
+Este proyecto fue hecho en React.
 
-## Sobre la autora
+## Autora
 
-Lic. en Letras por la UBA, poeta, editora y programadora web.
-Busco indagar en los campos de la literatura expandida, cruzando conocimientos entre el lenguaje natural y los lenguajes de programación. 
+Noelia Abraham
 
-Redes: https://www.instagram.com/_noe_abraham/
+### `npm start`
 
-## Sobre esta pieza
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-El primer desafío para quien ingresa a ver esta pieza es no percibir un texto o palabras legibles. Justamente, es lo que entendemos por palabra o texto lo que resulta descompuesto, des-asimilado. Allí donde el ojo intenta, se esfuerza en detectar palabras, frases, oraciones, texto, es donde se juega la apuesta tecnopoética de esta pieza. 
-El audio aporta el recitado de cada verso pero rápidamente es impedido por el clic, que dispara otros segmentos deaudio-versos, superponiéndolos, según los clics. Podría decirse que el efecto acumulativo es el que rige toda la programación de la pieza. Se acumulan los clics, las palabras-grafías, la voz, los fragmentos. Justamente, el audio en loop duplica el juego tipográfico que empieza abarrotado sin separación para terminar en grafías aisladas, versos aislados, que no dejan que se forme el poema como unidad. Y una voz que repite y se repite sobre sí misma.  La voz que se reproduce recita cada verso. Y la pieza misma diseña un espacio atravesado por variables de dirección, de tiempo y velocidad textual y auditiva. En el entramado de esas variables, se juega la posibilidad de restituir un poema, una memoria. A partir de la ubicación en la que se coloca el cursor –que es la posición de quién ve/lee/escucha-se articula la posibilidad de la emergencia de una memoria situada. 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-El cursor es, entonces, también punto de vista, en tanto lo que construye quien recorre la pieza es una representación situacional de una totalidad. Esa ubicación no es estable, varía según dónde se sitúe la mano o el cursor, es una posición transitoria que refleja una ubicación para dar lugar, luego, a otra, por medio de una construcción discursiva que descentra la espacialidad, que genera una suerte de resistencia a un centro poético.  
+### `npm test`
 
-Ahora bien, la apertura y fragmentación que analizamos en esta pieza puede pensarse como propia de la cultura algorítmica y en función de cómo esta infraestructura de percepción que es internet, proporciona modos de captar nuestra atención y de percibir la experiencia, en línea con Berti (2022).  Sin embargo, en esta pieza el lenguaje sonoro, verbal-visual conforma una matriz de percepción dificultosa, hay una desestandarización de lo que implica el acceso a un contenido si consideramos que en los últimos años la usabilidad y experiencia de usuario se volvieron no solo una exigencia sino una parte fundamental del funcionamiento de esta infraestructura de captación de datos y de atención. Además, la expectativa de reanudamiento de la pieza, su disponibilidad y su carácter abierto a la repetición, tres rasgos decisivos que señala Berti (2022) están en función de experimentar la brecha entre la memoria y su posibilidad de capturarla y almacenarla, que no solo se encuentra en la disposición espacial y las decisiones de programación sino tematizada en el mismo poema de la pieza. Ese estar entre lo decible y lo indecible se pone en jugo en el plano de lo auditivo al superponer los versos; en lo visual, en el juego tipográfico y en la programación como decisión de no dar a ver el poema completo, tampoco a escucharlo y que sea una mancha tipográfica, especie de nebulosa. 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

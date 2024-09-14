@@ -1,6 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Verse from './Verse';
 import MediaDisplay from './MediaDisplay';
+
+
 import './PoemContainer.css';
 
 // Asegúrate de que estas rutas sean correctas
@@ -230,6 +232,26 @@ function PoemContainer() {
   const [isAnimating, setIsAnimating] = useState(false);
   const activeAudios = useRef([]); //  declarar `activeAudios` aquí
 
+
+  useEffect(() => {
+    const highlightRandomVerses = (numberOfHighlights) => {
+      const verses = document.querySelectorAll('.verse');
+      const selectedVerses = [];
+      const totalVerses = verses.length;
+
+      while (selectedVerses.length < numberOfHighlights) {
+        const randomIndex = Math.floor(Math.random() * totalVerses);
+        if (!selectedVerses.includes(randomIndex)) {
+          selectedVerses.push(randomIndex);
+          verses[randomIndex].classList.add('brilio'); // Agrega la clase para resaltar
+        }
+      }
+    };
+
+    highlightRandomVerses(5); // Cambia este número para resaltar más o menos versos
+  }, []);
+
+
   const handleVerseClick = (verseIndex) => {
    
    
@@ -267,6 +289,7 @@ function PoemContainer() {
             key={index}
             text={verse.text}
             onClick={() => handleVerseClick(index % poemData.length)}
+            className="verse" // Asegúrate de que esta clase esté presente
             style={{
               transform: `translate(${randomX * 100}vw, ${randomY * 100}vh)`
             }}

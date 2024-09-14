@@ -75,5 +75,20 @@
 }
 
 
+.brilio {
+  color: #ff00ff; /* Color del brillo */
+  animation: strobe 0.5s infinite;
+}
+
+@keyframes strobe {
+  0%, 100% {
+    opacity: 1; /* Visible */
+    color:white;
+  }
+  50% {
+    opacity: 0; /* Invisible */
+    color:#ff00ff;
+  }
+}
 
 
