@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import Verse from './Verse';
 import MediaDisplay from './MediaDisplay';
 
-
 import './PoemContainer.css';
 
 // Asegúrate de que estas rutas sean correctas
@@ -11,8 +10,6 @@ import imagen2 from './assets/imagen2.jpg';
 import imagen3 from './assets/imagen3.jpg';
 import imagen4 from './assets/imagen4.jpg';
 import imagen5 from './assets/imagen5.jpg';
-
-
 
 const poemData = [
   {
@@ -230,14 +227,9 @@ const poemData = [
 function PoemContainer() {
   const [activeVerse, setActiveVerse] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const activeAudios = useRef([]); //  declarar `activeAudios` aquí
-  const [showModal, setShowModal] = useState(false); // Estado para controlar el modal
-
+  const activeAudios = useRef([]); // Declarar `activeAudios` aquí
 
   useEffect(() => {
-     // Mostrar el modal al cargar la página
-     setShowModal(true);
-    
     const highlightRandomVerses = (numberOfHighlights) => {
       const verses = document.querySelectorAll('.verse');
       const selectedVerses = [];
@@ -255,11 +247,7 @@ function PoemContainer() {
     highlightRandomVerses(5); // Cambia este número para resaltar más o menos versos
   }, []);
 
-
-  
   const handleVerseClick = (verseIndex) => {
-   
-   
     setActiveVerse(verseIndex);
 
     // Crear un nuevo elemento de audio y reproducirlo
@@ -270,8 +258,6 @@ function PoemContainer() {
     activeAudios.current.push(newAudio);
   };
 
-  
-
   const handleOverlayClick = () => {
     setActiveVerse(null); // Cierra el overlay
   };
@@ -281,54 +267,34 @@ function PoemContainer() {
     handleOverlayClick(); // Cierra el overlay al hacer clic en la imagen
   };
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
   // Repetir el poema para llenar la pantalla
   const repeatedVerses = Array(10).fill(poemData).flat();
 
-
-
   return (
-    <>
-      {showModal && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <p>
-              Un algoritmo puede ser también un laberinto.<br/>
-              
-              A la memoria de todas mis muertas, un clic tras otro, sin parar, puede que te haga escuchar un poema.
-            </p>
-            <button onClick={handleCloseModal}>Cerrar</button>
+    <div className={`poem-container ${activeVerse !== null ? 'poem-active' : ''}`}>
+      {repeatedVerses.map((verse, index) => {
+        const randomX = Math.random();
+        const randomY = Math.random();
+        return (
+          <Verse
+            key={index}
+            text={verse.text}
+            onClick={() => handleVerseClick(index % poemData.length)}
+            className="verse" // Asegúrate de que esta clase esté presente
+            style={{
+              transform: `translate(${randomX * 100}vw, ${randomY * 100}vh)`
+            }}
+          />
+        );
+      })}
+      {activeVerse !== null && (
+        <div className="overlay" onClick={handleOverlayClick}>
+          <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
+            <p className="overlay-text">{poemData[activeVerse].text}</p>
           </div>
         </div>
       )}
-      <div className={`poem-container ${activeVerse !== null ? 'poem-active' : ''}`}>
-        {repeatedVerses.map((verse, index) => {
-          const randomX = Math.random();
-          const randomY = Math.random();
-          return (
-            <Verse
-              key={index}
-              text={verse.text}
-              onClick={() => handleVerseClick(index % poemData.length)}
-              className="verse" // Asegúrate de que esta clase esté presente
-              style={{
-                transform: `translate(${randomX * 100}vw, ${randomY * 100}vh)`
-              }}
-            />
-          );
-        })}
-        {activeVerse !== null && (
-          <div className="overlay" onClick={handleOverlayClick}>
-            <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
-              <p className="overlay-text">{poemData[activeVerse].text}</p>
-            </div>
-          </div>
-        )}
-      </div>
-    </>
+    </div>
   );
 }
 
