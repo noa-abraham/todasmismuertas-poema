@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Verse from './Verse';
 import MediaDisplay from './MediaDisplay';
 
+
 import './PoemContainer.css';
 
 // Asegúrate de que estas rutas sean correctas
@@ -10,6 +11,8 @@ import imagen2 from './assets/imagen2.jpg';
 import imagen3 from './assets/imagen3.jpg';
 import imagen4 from './assets/imagen4.jpg';
 import imagen5 from './assets/imagen5.jpg';
+
+
 
 const poemData = [
   {
