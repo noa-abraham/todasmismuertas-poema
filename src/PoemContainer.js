@@ -283,6 +283,7 @@ function PoemContainer() {
             key={index}
             text={verse.text}
             onClick={() => handleVerseClick(index % poemData.length)}
+            onTouchStart={() => handleVerseClick(index % poemData.length)} // Evento para dispositivos táctiles
             className="verse" // Asegúrate de que esta clase esté presente
             style={{
               transform: `translate(${randomX * 100}vw, ${randomY * 100}vh)`
@@ -291,8 +292,8 @@ function PoemContainer() {
         );
       })}
       {activeVerse !== null && (
-        <div className="overlay" onClick={handleOverlayClick}>
-          <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
+        <div className="overlay" onClick={handleOverlayClick} onTouchStart={handleOverlayClick}>
+          <div className="overlay-content" onClick={(e) => e.stopPropagation()} onTouchStart={(e) => e.stopPropagation()}>
             <p className="overlay-text">{poemData[activeVerse].text}</p>
           </div>
         </div>
