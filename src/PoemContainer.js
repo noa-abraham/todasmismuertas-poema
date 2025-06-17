@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import React, { useState, useRef, useEffect } from 'react';
 import Verse from './Verse';
 import MediaDisplay from './MediaDisplay';
 
 
+=======
+
+import React, { useState, useEffect, useRef } from "react";
+import Verse from './Verse';
+import MediaDisplay from './MediaDisplay';
+>>>>>>> 468f2bc (Corrige errores y actualiza proyecto a version movil)
 import './PoemContainer.css';
 
 // Asegúrate de que estas rutas sean correctas
