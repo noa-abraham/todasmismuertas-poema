@@ -1,13 +1,9 @@
 import React from 'react';
-import './Verse.css'; // Asegúrate de tener el archivo CSS para Verse
+import './Verse.css';
 
-<<<<<<< HEAD
-function Verse({ text, onClick, style }) {
-=======
-function Verse({ text, onClick, onTouchStart, style }) {
->>>>>>> 468f2bc (Corrige errores y actualiza proyecto a version movil)
+function Verse({ text, onPointerDown, style }) {
   return (
-    <p className="verse" onClick={onClick} style={style}>
+    <p className="verse" onPointerDown={onPointerDown} style={style}>
       {text}
     </p>
   );

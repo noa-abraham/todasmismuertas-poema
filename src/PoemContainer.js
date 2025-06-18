@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 import React, { useState, useRef, useEffect } from 'react';
 import Verse from './Verse';
 import MediaDisplay from './MediaDisplay';
 
 
-=======
-
-import React, { useState, useEffect, useRef } from "react";
-import Verse from './Verse';
-import MediaDisplay from './MediaDisplay';
->>>>>>> 468f2bc (Corrige errores y actualiza proyecto a version movil)
 import './PoemContainer.css';
 
 // Asegúrate de que estas rutas sean correctas
@@ -262,7 +255,10 @@ function PoemContainer() {
 
     // Crear un nuevo elemento de audio y reproducirlo
     const newAudio = new Audio(poemData[verseIndex].audio);
-    newAudio.play();
+    newAudio.play().catch((e) => {
+    // Puedes mostrar un mensaje o ignorar el error
+    console.log("No se pudo reproducir el audio:", e);
+  });
 
     // Guardar el audio activo en el arreglo de referencias
     activeAudios.current.push(newAudio);
@@ -289,8 +285,7 @@ function PoemContainer() {
           <Verse
             key={index}
             text={verse.text}
-            onClick={() => handleVerseClick(index % poemData.length)}
-            onTouchStart={() => handleVerseClick(index % poemData.length)} // Evento para dispositivos táctiles
+             onPointerDown={() => handleVerseClick(index % poemData.length)}
             className="verse" // Asegúrate de que esta clase esté presente
             style={{
               transform: `translate(${randomX * 100}vw, ${randomY * 100}vh)`
